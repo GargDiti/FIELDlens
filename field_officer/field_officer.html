@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Field Officer Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background: radial-gradient(circle at top, #0b1d2e, #020b16);
+            color: #e6f1ff;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .topbar {
+            height: 60px;
+            background: linear-gradient(90deg, #020b16, #0b1d2e);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .topbar h4 {
+            margin: 0;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .dashboard {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+
+        .sidebar {
+            width: 250px;
+            background: rgba(8, 20, 36, 0.95);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px 0;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 14px 24px;
+            color: #cfd8e3;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        .sidebar a:hover {
+            background: rgba(0, 255, 200, 0.08);
+            color: #2fffd5;
+        }
+
+        .sidebar a.active {
+            background: rgba(0, 255, 200, 0.15);
+            color: #2fffd5;
+            border-left: 4px solid #2fffd5;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        .card {
+            background: rgba(12, 30, 54, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            color: #e6f1ff;
+            backdrop-filter: blur(8px);
+        }
+
+        .card-header {
+            background: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            color: #2fffd5;
+            font-weight: 600;
+        }
+
+        .start-day {
+            border: 1px solid rgba(0, 255, 200, 0.4);
+            color: #2fffd5;
+            font-weight: 600;
+        }
+
+        .welcome {
+            background: rgba(0, 255, 200, 0.08);
+            border: 1px solid rgba(0, 255, 200, 0.3);
+            color: #2fffd5;
+            border-radius: 14px;
+            padding: 16px 20px;
+        }
+
+        .summary-card small {
+            color: #9fb3c8;
+        }
+
+        .summary-card h4 {
+            margin-top: 6px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .action-card {
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .action-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px rgba(0, 255, 200, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <h4>Field Officer Dashboard</h4>
+    </div>
+
+    <div class="dashboard">
+
+        <div class="sidebar">
+            <a class="active" href="#">Dashboard</a>
+            <a href="#">Start Day</a>
+            <a href="#">Log Meeting</a>
+            <a href="#">Add Group Meeting</a>
+            <a href="#">Distribute Sample</a>
+            <a href="#">Add Sale / Order</a>
+        </div>
+
+        <div class="content">
+
+            <div class="card start-day mb-3">
+                <div class="card-body">
+                    Start Day
+                </div>
+            </div>
+
+            <div class="welcome mb-4">
+                Good morning! Have a productive day
+            </div>
+
+            <h5 class="mb-3">Today's Summary</h5>
+            <div class="row g-3 mb-4">
+                <div class="col-md-3">
+                    <div class="card summary-card">
+                        <div class="card-body">
+                            <small>Distance Today</small>
+                            <h4>42 km</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card summary-card">
+                        <div class="card-body">
+                            <small>Meetings Done</small>
+                            <h4>5</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card summary-card">
+                        <div class="card-body">
+                            <small>People Met</small>
+                            <h4>18</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card summary-card">
+                        <div class="card-body">
+                            <small>Sales Logged</small>
+                            <h4>₹ 8,200</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                    <div class="card action-card">
+                        <div class="card-body">Log Meeting</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card action-card">
+                        <div class="card-body">Add Group Meeting</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card action-card">
+                        <div class="card-body">Distribute Sample</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card action-card">
+                        <div class="card-body">Add Sale / Order</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Today's Activity</div>
+                <div class="card-body">
+                    <p><strong>9:06 AM</strong> Day Started</p>
+                    <p><strong>10:15 AM</strong> Farmer Meeting</p>
+                    <p><strong>1:30 PM</strong> Sample Distributed</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
